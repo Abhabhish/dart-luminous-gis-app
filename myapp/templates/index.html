@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Selector</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .custom-div-icon {
+        position: relative;
+        }
+        .custom-div-icon .box {
+            border-radius: 5px;
+            color: white;
+            font-size: 12px;
+            padding: 5px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Make background semi-transparent */
+        }
+        .custom-div-icon .pointer {
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid rgba(0, 0, 0, 0.7); /* Same color and transparency as the box */
+            margin: 0 auto;
+            position: relative;
+            top: -1px;
+        }
+
+
+
+        .district-label {
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+    }
+
+
+        /* Header styles */
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1002;
+        }
+        .header .logo {
+            position: absolute;
+            left: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header .company-name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Hamburger menu styles */
+        .menu {
+            position: fixed;
+            top: 70px; /* Adjusted to be below the header */
+            left: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .menu span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: black;
+        }
+        .menu-right {
+            position: fixed;
+            top: 70px; /* Adjusted to be below the header */
+            right: 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .menu-right span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: black;
+        }
+        /* Form popup styles */
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 110px;  /* Adjusted to avoid overlap with the header */
+            left: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent background */
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+        }
+        .form-popup .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            border: none;
+        }
+        .form-popup .close:hover {
+            color: red;
+        }
+        .form-popup h1 {
+            margin-top: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-popup form {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-popup form button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-popup form button:hover {
+            background-color: #0056b3;
+        }
+        /* Table popup styles */
+        .table-popup {
+            display: none;
+            position: fixed;
+            top: 110px;  /* Adjusted to avoid overlap with the header */
+            right: 15px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent background */
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            z-index: 1001;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+        .table-popup .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            background: transparent;
+            border: none;
+        }
+        .table-popup .close:hover {
+            color: red;
+        }
+        .table-popup h1 {
+            margin-top: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .table-popup table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-popup table, .table-popup th, .table-popup td {
+            border: 1px solid black;
+        }
+        .table-popup th, .table-popup td {
+            padding: 8px;
+            text-align: left;
+        }
+        #map {
+            margin-top: 60px; /* To ensure map is visible below the header */
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <header class="header">
+        <div class="logo">
+            <img src="https://lumprodsta.blob.core.windows.net/prodcontainer/assets/icons/LuminousLogoBlue.webp" alt="Company Logo">
+        </div>
+        <div class="company-name">Luminous Power Technologies</div>
+    </header>
+    <button class="menu" id="menuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <button class="menu-right" id="tableMenuButton">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="form-popup" id="locationFormPopup">
+        <button class="close" id="closeFormButton">&times;</button>
+        <h1>Select Location</h1>
+        <form method="post" id="locationForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="table-popup" id="tablePopup">
+        <button class="close" id="closeTableButton">&times;</button>
+        <h1>Data Table</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Last Year</th>
+                    <th>Current Year</th>
+                    <th>% Growth</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Table data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <div id="map" style="height: 700px; width: 100%;"></div>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#menuButton').click(function() {
+                $('#locationFormPopup').show();
+            });
+
+            $('#closeFormButton').click(function() {
+                $('#locationFormPopup').hide();
+            });
+
+            $('#tableMenuButton').click(function() {
+                $('#tablePopup').show();
+            });
+
+            $('#closeTableButton').click(function() {
+                $('#tablePopup').hide();
+            });
+
+            $('#id_state').change(function() {
+                var url = "{% url 'ajax_load_districts' %}";
+                var stateId = $(this).val();
+                $.ajax({
+                    url: url,
+                    data: {
+                        'state': stateId
+                    },
+                    success: function(data) {
+                        var options = '<option value="">Select District</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            options += '<option value="' + data[i].name + '">' + data[i].name + '</option>';
+                        }
+                        $("#id_district").html(options);
+                    }
+                });
+            });
+
+            $('#locationForm').submit(function(event) {
+                event.preventDefault();
+                clearDistrictLayers();
+
+                var stateId = $('#id_state option:selected').text().toLowerCase().replace(" ", "_");
+                var districtName = $('#id_district').val().trim();
+                var geoJsonPath = "/static/data/" + stateId + ".geojson";
+
+                if (districtName === "") {
+                    // No district selected, draw boundaries for all districts in the state
+                    $.getJSON('/api/state-districts/' + encodeURIComponent($('#id_state option:selected').text()), function(data) {
+                        var districtNames = data.districts;
+                        var districtFeatures = [];
+                        var tableData = [];
+
+                        $.getJSON(geoJsonPath, function(geoJsonData) {
+                            for (var i = 0; i < districtNames.length; i++) {
+                                var features = geoJsonData.features.filter(function(feature) {
+                                    return feature.properties.DIST_NAME.trim() === districtNames[i].trim();
+                                });
+                                districtFeatures = districtFeatures.concat(features);
+                            }
+
+                            if (districtFeatures.length > 0) {
+                                districtFeatures.forEach(function(feature) {
+                                    setDistrictColor(feature.properties.DIST_NAME.trim(), function(color) {
+                                        var geoJsonLayer = L.geoJSON(feature, {
+                                            style: function() {
+                                                return { color: color };
+                                            },
+                                            onEachFeature: onEachFeature
+                                        });
+                                        geoJsonLayerGroup.addLayer(geoJsonLayer);  // Add the layer to the layer group
+                                    });
+                                });
+                                map.fitBounds(L.geoJSON(districtFeatures).getBounds());
+
+                                // Fetch table data for all districts
+                                $.getJSON('/api/state-district-details/' + encodeURIComponent($('#id_state option:selected').text()), function(data) {
+                                    tableData = data;
+                                    updateTable(tableData);
+                                });
+                            } else {
+                                alert("No districts found in GeoJSON file for the selected state");
+                            }
+                        }).fail(function() {
+                            alert("GeoJSON file not found for the selected state");
+                        });
+                    });
+                } else {
+                    // District selected, draw boundary for the selected district
+                    $.getJSON(geoJsonPath, function(data) {
+                        var districtFeature = data.features.filter(function(feature) {
+                            return feature.properties.DIST_NAME.trim() === districtName;
+                        });
+
+                        setDistrictColor(districtName, function(color) {
+                            if (districtFeature.length > 0) {
+                                var geoJsonLayer = L.geoJSON(districtFeature, {
+                                    style: function() {
+                                        return { color: color };
+                                    },
+                                    onEachFeature: onEachFeature
+                                });
+                                geoJsonLayerGroup.addLayer(geoJsonLayer);  // Add the layer to the layer group
+                                map.fitBounds(geoJsonLayer.getBounds());
+
+                                // Fetch table data for the selected district
+                                $.getJSON('/api/district-details/' + encodeURIComponent(districtName), function(data) {
+                                    updateTable([data]);
+                                });
+                            } else {
+                                alert("District not found in GeoJSON file");
+                            }
+                        });
+                    }).fail(function() {
+                        alert("GeoJSON file not found for the selected state");
+                    });
+                }
+            });
+
+            function updateTable(data) {
+                var tableBody = $('#tableBody');
+                tableBody.empty(); // Clear the table body
+
+                data.forEach(function(item) {
+                    var row = '<tr>' +
+                        '<td>' + item.state + '</td>' +
+                        '<td>' + item.district + '</td>' +
+                        '<td>' + item.last_year + '</td>' +
+                        '<td>' + item.current_year + '</td>' +
+                        '<td>' + item.growth_percentage + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

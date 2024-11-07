@@ -1,0 +1,962 @@
+[
+    {
+        "model": "myapp.state",
+        "pk": 1,
+        "fields": {
+            "name": "Delhi"
+        }
+    },
+    {
+        "model": "myapp.state",
+        "pk": 2,
+        "fields": {
+            "name": "Uttar Pradesh"
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 12,
+        "fields": {
+            "name": "Saharanpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 13,
+        "fields": {
+            "name": "Shamli",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 14,
+        "fields": {
+            "name": "Sambhal",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 15,
+        "fields": {
+            "name": "Hapur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 16,
+        "fields": {
+            "name": "Bulandshahr",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 17,
+        "fields": {
+            "name": "Muzaffarnagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 18,
+        "fields": {
+            "name": "Bijnor",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 19,
+        "fields": {
+            "name": "Rampur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 20,
+        "fields": {
+            "name": "Aligarh",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 21,
+        "fields": {
+            "name": "Hathras",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 22,
+        "fields": {
+            "name": "Firozabad",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 23,
+        "fields": {
+            "name": "Mainpuri",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 24,
+        "fields": {
+            "name": "Budaun",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 25,
+        "fields": {
+            "name": "Agra",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 26,
+        "fields": {
+            "name": "Bareilly",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 27,
+        "fields": {
+            "name": "Shahjahanpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 28,
+        "fields": {
+            "name": "Kheri",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 29,
+        "fields": {
+            "name": "Sitapur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 30,
+        "fields": {
+            "name": "Hardoi",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 31,
+        "fields": {
+            "name": "Unnao",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 32,
+        "fields": {
+            "name": "Lucknow",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 33,
+        "fields": {
+            "name": "Rae Bareli",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 34,
+        "fields": {
+            "name": "Amethi",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 35,
+        "fields": {
+            "name": "Farrukhabad",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 36,
+        "fields": {
+            "name": "Kannauj",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 37,
+        "fields": {
+            "name": "Etawah",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 38,
+        "fields": {
+            "name": "Auraiya",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 39,
+        "fields": {
+            "name": "Kanpur Dehat",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 40,
+        "fields": {
+            "name": "Kanpur Nagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 41,
+        "fields": {
+            "name": "Jalaun",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 42,
+        "fields": {
+            "name": "Hamirpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 43,
+        "fields": {
+            "name": "Jhansi",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 44,
+        "fields": {
+            "name": "Banda",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 45,
+        "fields": {
+            "name": "Chitrakoot",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 46,
+        "fields": {
+            "name": "Fatehpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 47,
+        "fields": {
+            "name": "Pratapgarh",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 48,
+        "fields": {
+            "name": "Bara Banki",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 49,
+        "fields": {
+            "name": "Faizabad",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 50,
+        "fields": {
+            "name": "Mahoba",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 51,
+        "fields": {
+            "name": "Ambedkar Nagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 52,
+        "fields": {
+            "name": "Sultanpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 53,
+        "fields": {
+            "name": "Bahraich",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 54,
+        "fields": {
+            "name": "Shravasti",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 55,
+        "fields": {
+            "name": "Balrampur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 56,
+        "fields": {
+            "name": "Gonda",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 57,
+        "fields": {
+            "name": "Siddharthnagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 58,
+        "fields": {
+            "name": "Basti",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 59,
+        "fields": {
+            "name": "Sant Kabir Nagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 60,
+        "fields": {
+            "name": "Gorakhpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 61,
+        "fields": {
+            "name": "Kushinagar",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 62,
+        "fields": {
+            "name": "Deoria",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 63,
+        "fields": {
+            "name": "Azamgarh",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 64,
+        "fields": {
+            "name": "Mau",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 65,
+        "fields": {
+            "name": "Jaunpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 66,
+        "fields": {
+            "name": "Ghazipur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 67,
+        "fields": {
+            "name": "Maharajganj",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 68,
+        "fields": {
+            "name": "Chandauli",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 69,
+        "fields": {
+            "name": "Varanasi",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 70,
+        "fields": {
+            "name": "Sant Ravidas Nagar (Bhadohi)",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 71,
+        "fields": {
+            "name": "Mirzapur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 72,
+        "fields": {
+            "name": "Sonbhadra",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 73,
+        "fields": {
+            "name": "Etah",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 74,
+        "fields": {
+            "name": "Kasganj",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 75,
+        "fields": {
+            "name": "Meerut",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 76,
+        "fields": {
+            "name": "Allahabad",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 77,
+        "fields": {
+            "name": "Kaushambi",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 78,
+        "fields": {
+            "name": "Amroha",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 79,
+        "fields": {
+            "name": "Moradabad",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 80,
+        "fields": {
+            "name": "Ghaziabad",
+            "state": 2,
+            "last_year": 18.98,
+            "current_year": 20.78,
+            "growth_percentage": 9
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 81,
+        "fields": {
+            "name": "Baghpat",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 82,
+        "fields": {
+            "name": "Mathura",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 83,
+        "fields": {
+            "name": "Lalitpur",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 84,
+        "fields": {
+            "name": "Gautam Budh Nagar",
+            "state": 2,
+            "last_year": 14.21,
+            "current_year": 18.94,
+            "growth_percentage": 33
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 85,
+        "fields": {
+            "name": "Ballia",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 86,
+        "fields": {
+            "name": "Pilibhit",
+            "state": 2,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 1,
+        "fields": {
+            "name": "North East",
+            "state": 1,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 2,
+        "fields": {
+            "name": "South Delhi",
+            "state": 1,
+            "last_year": 10.54,
+            "current_year": 15.89,
+            "growth_percentage": 51
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 3,
+        "fields": {
+            "name": "South West",
+            "state": 1,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 4,
+        "fields": {
+            "name": "Central Delhi",
+            "state": 1,
+            "last_year": 6.01,
+            "current_year": 4.75,
+            "growth_percentage": -21
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 5,
+        "fields": {
+            "name": "South East",
+            "state": 1,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 6,
+        "fields": {
+            "name": "Shahdara",
+            "state": 1,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 7,
+        "fields": {
+            "name": "North Delhi",
+            "state": 1,
+            "last_year": 10.65,
+            "current_year": 17.62,
+            "growth_percentage": 65
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 8,
+        "fields": {
+            "name": "West Delhi",
+            "state": 1,
+            "last_year": 8.72,
+            "current_year": 12.32,
+            "growth_percentage": 41
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 9,
+        "fields": {
+            "name": "New Delhi",
+            "state": 1,
+            "last_year": 3.54,
+            "current_year": 2.86,
+            "growth_percentage": -19
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 10,
+        "fields": {
+            "name": "East Delhi",
+            "state": 1,
+            "last_year": 15.08,
+            "current_year": 19.02,
+            "growth_percentage": 26
+        }
+    },
+    {
+        "model": "myapp.district",
+        "pk": 11,
+        "fields": {
+            "name": "North West",
+            "state": 1,
+            "last_year": null,
+            "current_year": null,
+            "growth_percentage": null
+        }
+    }
+    ]
